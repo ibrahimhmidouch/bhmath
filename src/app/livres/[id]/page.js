@@ -99,16 +99,7 @@ export default function BookDetailPage() {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-8">
         <article className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-          {book.image && (
-            <div className="relative w-full h-96 mb-6 rounded-lg overflow-hidden bg-gray-200">
-              <Image
-                src={book.image}
-                alt={book.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-          )}
+          
 
           <header className="mb-6">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
