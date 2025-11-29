@@ -100,7 +100,6 @@ export default function BookDetailPage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <article className="bg-white rounded-xl shadow-lg p-6 md:p-8">
           
-
           <header className="mb-6">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               {book.title}

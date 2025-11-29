@@ -137,9 +137,35 @@ export default async function DevoirPage({ params, searchParams }) {
             <div key={devoir._id} className="bg-white rounded-lg shadow-md p-6">
               <h2 className="text-xl font-semibold mb-2">{devoir.title}</h2>
               <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: devoir.content }} />
-              <div className="mt-4 text-sm text-gray-500">
-                <span className="mr-4">Semestre {devoir.semester}</span>
-                <span>Publié le {new Date(devoir.createdAt).toLocaleDateString()}</span>
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+                <div className="text-sm text-gray-500">
+                  <span className="mr-4">Semestre {devoir.semester}</span>
+                  <span>Publié le {new Date(devoir.createdAt).toLocaleDateString()}</span>
+                </div>
+                {devoir.pdfUrl && (
+                  <a
+                    href={devoir.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="inline-flex items-center px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
+                  >
+                    <svg
+                      className="h-5 w-5 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                    Télécharger le PDF
+                  </a>
+                )}
               </div>
             </div>
           ))}
