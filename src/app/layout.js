@@ -34,9 +34,9 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  other: {
-    'google-adsense-account': 'ca-pub-3523606019399197',
-  },
+  // other: {
+  //   'google-adsense-account': 'ca-pub-3523606019399197',
+  // },
 }
 
 export const viewport = {
@@ -47,12 +47,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" className={inter.className}>
       <body>
-        <Script
+        {/* AdSense Script - Commented out until AdSense approval */}
+        {/* <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3523606019399197"
           crossOrigin="anonymous"
           strategy="afterInteractive"
-        />
+        /> */}
         <AuthProvider>
           <TopHeader />
           <MainHeader />

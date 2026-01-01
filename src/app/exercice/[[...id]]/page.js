@@ -176,15 +176,15 @@ export default async function ExercisePage({ params }) {
                     className="bg-white rounded-xl p-6 shadow-lg border border-[#e3eaf4]"
                   >
                     <div className="space-y-4">
-                      <h2 className="text-xl font-semibold text-gray-800">
+                      <h2 className="text-xl bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent leading-tight">
                         {exercise.name}
                       </h2>
                       <div className="flex flex-col space-y-3">
                         <Link
                           href={`/exercice/${level}/${exercise.id}/content`}
-                          className="flex items-center justify-between bg-gray-50 hover:bg-[#e3eaf4] rounded-lg p-4 transition-all duration-300"
+                          className="flex items-center bg-orange-500 hover:bg-orange-200 backdrop-blur-sm justify-between bg-gray-50 hover:bg-[#e3eaf4] rounded-lg p-4 transition-all duration-300"
                         >
-                          <span className="text-gray-800 font-medium">
+                          <span className="text-white font-medium">
                             Exercices
                           </span>
                           <div className="text-[#003566]">

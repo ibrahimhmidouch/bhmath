@@ -23,4 +23,13 @@ const courseSchema = new mongoose.Schema({
   }
 });
 
+// Ensure id field is available for serialization
+courseSchema.set('toJSON', {
+  virtuals: true,
+  transform: function(doc, ret) {
+    ret.id = ret._id.toString();
+    return ret;
+  }
+});
+
 export default courseSchema; 
