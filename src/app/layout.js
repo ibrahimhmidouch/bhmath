@@ -48,12 +48,12 @@ export default function RootLayout({ children }) {
     <html lang="fr" className={inter.className}>
       <body>
         {/* AdSense Script - Commented out until AdSense approval */}
-        {/* <Script
+         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3523606019399197"
           crossOrigin="anonymous"
           strategy="afterInteractive"
-        /> */}
+        /> 
         <AuthProvider>
           <TopHeader />
           <MainHeader />
