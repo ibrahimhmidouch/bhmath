@@ -18,13 +18,18 @@ const resources = [
   },
   {
     title: 'Devoirs',
-    href: '/devoir/2BacTCT',
+    href: '/devoir/2BacTech',
     description: 'Devoirs et examens corrigés'
   },
   {
-    title: 'Résumés',
-    href: '/secondary/class3/lettres/resumes',
-    description: 'Fiches de révision et résumés'
+    title: 'Examens Nationaux',
+    href: '/exams/2BacLettres',
+    description: 'Examens nationaux des années précédentes'
+  },
+  {
+    title: 'Examens Blancs',
+    href: '/examBlancs/2BacLettres',
+    description: 'Examens blancs pour s\'entraîner'
   }
 ];
 

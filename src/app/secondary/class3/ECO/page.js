@@ -22,9 +22,14 @@ const resources = [
     description: 'Devoirs et examens corrigés'
   },
   {
-    title: 'Résumés',
-    href: '/secondary/class3/ECO/resumes',
-    description: 'Fiches de révision et résumés'
+    title: 'Examens Nationaux',
+    href: '/exams/2BacEco',
+    description: 'Examens nationaux des années précédentes'
+  },
+  {
+    title: 'Examens Blancs',
+    href: '/examBlancs/2BacEco',
+    description: 'Examens blancs pour s\'entraîner'
   }
 ];
 

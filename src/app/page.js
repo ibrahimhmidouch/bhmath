@@ -257,9 +257,10 @@ export default function HomePage() {
                 Des ressources adaptées à chaque niveau, du collège jusqu'au baccalauréat, pour accompagner votre progression
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"> */}
+            <div className="flex flex-col justify-center items-center gap-8 mb-16">
             {/* College Section */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            {/* <div className="bg-white rounded-xl shadow-lg p-8">
               <div className="flex items-center mb-4">
                 <div className="bg-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
                   <span className="text-white font-bold text-xl">C</span>
@@ -297,10 +298,10 @@ export default function HomePage() {
                   <p className="text-sm text-gray-600">Préparation au brevet et transition vers le lycée</p>
                 </Link>
               </div>
-            </div>
+            </div> */}
 
             {/* Secondary Section */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="bg-white  rounded-xl shadow-lg p-8">
               <div className="flex items-center mb-4">
                 <div className="bg-blue-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
                   <span className="text-white font-bold text-xl">L</span>
@@ -383,7 +384,7 @@ export default function HomePage() {
           </div>
 
           {/* Pricing Section */}
-          <div className="text-center mb-16">
+          {/* <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Des forfaits adaptés à vos besoins
             </h2>
@@ -396,9 +397,9 @@ export default function HomePage() {
               💡 <strong>Astuce :</strong> Le forfait annuel vous fait économiser 2 mois gratuits et inclut 
               des cours particuliers personnalisés pour maximiser vos résultats.
             </p>
-          </div>
+          </div> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {pricingPlans.map((plan, index) => (
               <div 
                 key={index}
@@ -452,7 +453,7 @@ export default function HomePage() {
                 )}
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Testimonials Section */}
           <div className="mb-16">

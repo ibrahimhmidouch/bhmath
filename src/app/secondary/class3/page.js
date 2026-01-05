@@ -66,9 +66,9 @@ const sections = [
     action: 'Accéder'
   },
   {
-    title: 'Lettres',
-    description: 'Programme de mathématiques adapté aux filières littéraires avec applications pratiques',
-    href: '/secondary/class3/lettres',
+    title: 'Technologies',
+    description: 'Programme de mathématiques adapté aux filières techniques avec applications pratiques',
+    href: '/secondary/class3/technologies',
     action: 'Accéder'
   },
   {

@@ -22,11 +22,7 @@ const sections = [
     href: '/devoir/firstBacMath',
     action: 'S\'entraîner'
   },
-  {
-    title: 'Examens',
-    href: '/exams/firstBacMath',
-    action: 'Se préparer'
-  }
+  
 ];
 
 export default function FirstBacMath() {

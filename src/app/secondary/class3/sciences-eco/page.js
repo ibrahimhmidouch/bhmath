@@ -9,22 +9,27 @@ const resources = [
   {
     title: 'Cours',
     description: 'Accédez à tous les cours de mathématiques',
-    href: '/secondary/class3/ECO',
+    href: '/course/2BacEco',
   },
   {
     title: 'Exercices',
-    href: '/secondary/class3/sciences-eco/exercice',
+    href: '/exercice/2BacEco',
     description: 'Exercices d\'application et de pratique'
   },
   {
     title: 'Devoirs',
-    href: '/secondary/class3/sciences-eco/devoirs',
+    href: '/devoir/2BacEco',
     description: 'Devoirs et examens corrigés'
   },
   {
-    title: 'Résumés',
-    href: '/secondary/class3/sciences-eco/resumes',
-    description: 'Fiches de révision et résumés'
+    title: 'Examens Nationaux',
+    href: '/exams/2BacEco',
+    description: 'Examens nationaux des années précédentes'
+  },
+  {
+    title: 'Examens Blancs',
+    href: '/examBlancs/2BacEco',
+    description: 'Examens blancs pour s\'entraîner'
   }
 ];
 

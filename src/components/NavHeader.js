@@ -13,36 +13,36 @@ export default function NavHeader() {
   };
 
   const navigationItems = [
-    {
-      name: 'Collège',
-      href: '/college',
-      sections: [
-        { 
-          name: '1ère année collège', 
-          href: '/college/class1',
-          level: 'firstCollege',
-          course: '/course/firstCollege',
-          exercice: '/exercice/firstCollege',
-          devoir: '/devoir/firstCollege'
-        },
-        { 
-          name: '2ème année collège', 
-          href: '/college/class2',
-          level: 'secondCollege',
-          course: '/course/secondCollege',
-          exercice: '/exercice/secondCollege',
-          devoir: '/devoir/secondCollege'
-        },
-        { 
-          name: '3ème année collège', 
-          href: '/college/class3',
-          level: 'thirdCollege',
-          course: '/course/thirdCollege',
-          exercice: '/exercice/thirdCollege',
-          devoir: '/devoir/thirdCollege'
-        }
-      ]
-    },
+    // {
+    //   name: 'Collège',
+    //   href: '/college',
+    //   sections: [
+    //     { 
+    //       name: '1ère année collège', 
+    //       href: '/college/class1',
+    //       level: 'firstCollege',
+    //       course: '/course/firstCollege',
+    //       exercice: '/exercice/firstCollege',
+    //       devoir: '/devoir/firstCollege'
+    //     },
+    //     { 
+    //       name: '2ème année collège', 
+    //       href: '/college/class2',
+    //       level: 'secondCollege',
+    //       course: '/course/secondCollege',
+    //       exercice: '/exercice/secondCollege',
+    //       devoir: '/devoir/secondCollege'
+    //     },
+    //     { 
+    //       name: '3ème année collège', 
+    //       href: '/college/class3',
+    //       level: 'thirdCollege',
+    //       course: '/course/thirdCollege',
+    //       exercice: '/exercice/thirdCollege',
+    //       devoir: '/devoir/thirdCollege'
+    //     }
+    //   ]
+    // },
     {
       name: 'Tronc Commun',
       href: '/secondary/class1',
@@ -140,12 +140,12 @@ export default function NavHeader() {
           devoir: '/devoir/2BacPCSVT'
         },
         { 
-          name: 'Lettres', 
-          href: '/secondary/class3/lettres',
+          name: 'Technologies', 
+          href: '/secondary/class3/technologies',
           level: '2BacTCT',
           course: '/course/2BacTCT',
           exercice: '/exercice/2BacTCT',
-          devoir: '/devoir/2BacTCT'
+          devoir: '/devoir/2BacTech'
         },
         { 
           name: 'Économie', 

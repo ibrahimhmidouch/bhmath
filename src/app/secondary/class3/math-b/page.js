@@ -24,13 +24,13 @@ const sections = [
   },
   {
     title: 'Examens Nationaux',
-    href: '/exams/2BacMath/national',
+    href: '/exams/2BacMathB',
     action: 'Se préparer'
   },
   {
-    title: 'Examens Régionaux',
-    href: '/exams/2BacMath/regional',
-    action: 'Réviser'
+    title: 'Examens Blancs',
+    href: '/examBlancs/2BacMathB',
+    action: 'S\'entraîner'
   },
   {
     title: 'Probabilités',

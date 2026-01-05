@@ -13,7 +13,7 @@ export default function TopHeader() {
           {/* Contact Info */}
           <div className="flex items-center space-x-4 text-sm">
             <a href="tel:+212629504107" className="hover:text-orange-400">
-              <span className="hidden sm:inline">Téléphone:</span> +212 629-504107
+              <span className="hidden sm:inline">Téléphone:</span> +212 708831975
             </a>
             <a href="mailto:contact@bhmaths.com" className="hover:text-orange-400">
               <span className="hidden sm:inline">Email:</span> contact@bhmaths.com

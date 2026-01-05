@@ -139,8 +139,8 @@ export default async function DevoirPage({ params, searchParams }) {
               <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: devoir.content }} />
               <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
                 <div className="text-sm text-gray-500">
-                  <span className="mr-4">Semestre {devoir.semester}</span>
-                  <span>Publié le {new Date(devoir.createdAt).toLocaleDateString()}</span>
+                <span className="mr-4">Semestre {devoir.semester}</span>
+                <span>Publié le {new Date(devoir.createdAt).toLocaleDateString()}</span>
                 </div>
                 {devoir.pdfUrl && (
                   <a

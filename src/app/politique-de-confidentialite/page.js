@@ -215,7 +215,7 @@ export default function PrivacyPolicyPage() {
               <p className="text-gray-700">
                 <strong>Téléphone :</strong>{' '}
                 <a href="tel:+212629504107" className="text-orange-500 hover:text-orange-600">
-                  +212 629-504107
+                  +212 708831975
                 </a>
               </p>
               <p className="text-gray-700">
@@ -251,4 +251,5 @@ export default function PrivacyPolicyPage() {
     </main>
   );
 }
+
 

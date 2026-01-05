@@ -70,10 +70,21 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Informations Légales</h3>
             <ul className="space-y-2">
               <li>
+                <Link href="/a-propos" className="text-gray-400 hover:text-white">
+                  À Propos de Nous
+                </Link>
+              </li>
+              <li>
                 <Link href="/politique-de-confidentialite" className="text-gray-400 hover:text-white">
                   Politique de Confidentialité
                 </Link>
               </li>
+              <li>
+                <Link href="/terms-of-use" className="text-gray-400 hover:text-white">
+                  Terms of Use
+                </Link>
+              </li>
+              
               <li>
                 <Link href="/contact" className="text-gray-400 hover:text-white">
                   Contact
@@ -91,7 +102,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <a href="tel:+212629504107" className="text-gray-400 hover:text-orange-400">
-                  +212 629-504107
+                  +212 708831975
                 </a>
               </li>
               <li className="flex items-center space-x-2">

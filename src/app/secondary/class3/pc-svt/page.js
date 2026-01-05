@@ -22,9 +22,14 @@ const resources = [
     description: 'Devoirs et examens corrigés'
   },
   {
-    title: 'Résumés',
-    href: '/secondary/class3/pc-svt/resumes',
-    description: 'Fiches de révision et résumés'
+    title: 'Examens Nationaux',
+    href: '/exams/2BacPCSVT',
+    description: 'Examens nationaux des années précédentes'
+  },
+  {
+    title: 'Examens Blancs',
+    href: '/examBlancs/2BacPCSVT',
+    description: 'Examens blancs pour s\'entraîner'
   }
 ];
 
