@@ -4,61 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 // ── Countdown component ───────────────────────────────────────────────────────
-function ExamCountdown() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  useEffect(() => {
-    const target = new Date('2026-06-04T00:00:00').getTime();
-    const tick = () => {
-      const diff = target - Date.now();
-      if (diff <= 0) { setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 }); return; }
-      setTimeLeft({
-        days:    Math.floor(diff / 86400000),
-        hours:   Math.floor((diff % 86400000) / 3600000),
-        minutes: Math.floor((diff % 3600000) / 60000),
-        seconds: Math.floor((diff % 60000) / 1000),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  const units = [
-    { label: 'Jours',    value: timeLeft.days },
-    { label: 'Heures',   value: timeLeft.hours },
-    { label: 'Minutes',  value: timeLeft.minutes },
-    { label: 'Secondes', value: timeLeft.seconds },
-  ];
-
-  return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-8 md:p-12 text-white shadow-xl shadow-orange-200">
-      {/* decorative circles */}
-      <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full" />
-      <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/10 rounded-full" />
-
-      <div className="relative text-center">
-        <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
-          <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-          Compte à rebours
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-1">Examen National 2026</h2>
-        <p className="text-orange-100 mb-8">04 Juin 2026 — Préparez-vous dès maintenant</p>
-
-        <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-lg mx-auto">
-          {units.map((u) => (
-            <div key={u.label} className="bg-white/15 backdrop-blur-sm rounded-2xl p-3 md:p-5 border border-white/20">
-              <div className="text-3xl md:text-5xl font-bold tabular-nums">
-                {String(u.value).padStart(2, '0')}
-              </div>
-              <div className="text-xs md:text-sm text-orange-100 mt-1 font-medium">{u.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // ── Feature card ─────────────────────────────────────────────────────────────
 function FeatureCard({ icon, title, description, items, color }) {
@@ -178,11 +124,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Countdown ─────────────────────────────────────────────────────── */}
-      <section className="bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <ExamCountdown />
-        </div>
-      </section>
+      
 
       {/* ── Features ──────────────────────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
