@@ -1,10 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-
-// ── Countdown component ───────────────────────────────────────────────────────
-
+import Head from 'next/head';
 
 // ── Feature card ─────────────────────────────────────────────────────────────
 function FeatureCard({ icon, title, description, items, color }) {
@@ -65,11 +62,83 @@ function TestimonialCard({ initial, name, level, text }) {
   );
 }
 
+// ── About section (NEW) ────────────────────────────────────────────────────────
+function AboutSection() {
+  return (
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">À propos de BHMaths</h2>
+        <div className="prose prose-lg text-slate-600 space-y-4">
+          <p>
+            BHMaths est une plateforme pédagogique marocaine dédiée à l'enseignement des mathématiques 
+            pour le collège et le lycée. Nous proposons des ressources complètes et structurées selon le 
+            programme officiel marocain.
+          </p>
+          <p>
+            Notre mission est de rendre les mathématiques accessibles et compréhensibles pour tous les élèves, 
+            en proposant des explications progressives, des exercices corrigés et une préparation optimale 
+            aux examens nationaux.
+          </p>
+          <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Notre approche pédagogique</h3>
+          <ul className="space-y-2">
+            <li className="flex gap-3"><span className="text-orange-500 font-bold">✓</span> Cours structurés par chapitre avec progression logique</li>
+            <li className="flex gap-3"><span className="text-orange-500 font-bold">✓</span> Exercices progressifs du niveau basique aux problèmes complexes</li>
+            <li className="flex gap-3"><span className="text-orange-500 font-bold">✓</span> Corrections détaillées pour chaque exercice</li>
+            <li className="flex gap-3"><span className="text-orange-500 font-bold">✓</span> Préparation complète aux examens nationaux</li>
+            <li className="flex gap-3"><span className="text-orange-500 font-bold">✓</span> Support pédagogique réactif et professionnel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── FAQ section (NEW) ──────────────────────────────────────────────────────────
+function FAQSection() {
+  const faqs = [
+    {
+      q: "Quel est le contenu disponible sur BHMaths ?",
+      a: "BHMaths couvre l'intégralité du programme marocain de mathématiques pour le collège (3 niveaux) et le lycée (Tronc Commun, 1ère Bac, 2ème Bac). Chaque niveau inclut des cours vidéo, des exercices corrigés et des examens nationaux."
+    },
+    {
+      q: "Puis-je accéder au contenu sur tous mes appareils ?",
+      a: "Oui, BHMaths est entièrement responsive et accessible sur ordinateur, tablette et téléphone. Vous pouvez consulter les ressources n'importe quand et n'importe où."
+    },
+    {
+      q: "Comment bénéficier du support WhatsApp ?",
+      a: "Notre équipe d'experts est disponible 24/7 sur WhatsApp pour répondre à vos questions, clarifier des concepts difficiles et vous accompagner dans votre apprentissage."
+    },
+    {
+      q: "Les exercices sont-ils alignés avec le programme officiel ?",
+      a: "Absolument. Tous nos contenus (cours, exercices, examens) sont conçus pour correspondre exactement au programme officiel marocain et aux standards des examens nationaux."
+    }
+  ];
+
+  return (
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-12 text-center">Questions fréquemment posées</h2>
+        <div className="space-y-6">
+          {faqs.map((faq, i) => (
+            <details key={i} className="group bg-white rounded-xl border border-slate-200 p-6 hover:border-orange-200 transition-colors cursor-pointer">
+              <summary className="flex items-center justify-between font-semibold text-slate-900">
+                {faq.q}
+                <span className="text-orange-500 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-slate-600 leading-relaxed">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function HomePage() {
   return (
     <main>
-      {/* ── Hero ───────────────────────────────────────────────────────────── */}
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
         {/* Background decorations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -80,9 +149,6 @@ export default function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-24">
           <div className="max-w-3xl mx-auto text-center">
-            {/* Badge */}
-          
-
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
               Maîtrisez les{' '}
               <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
@@ -92,13 +158,13 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Cours vidéo interactifs, exercices corrigés, devoirs surveillés et examens nationaux.
-              Tout ce dont vous avez besoin pour exceller du collège au baccalauréat.
+              Plateforme pédagogique marocaine proposant des cours vidéo interactifs, exercices corrigés, 
+              devoirs surveillés et examens nationaux. Couvre le collège et le lycée (Tronc Commun, 1ère &amp; 2ème Bac).
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/course" className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-orange-500/30 active:scale-95 text-base">
-                Commencer gratuitement
+                Explorer les cours
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -122,9 +188,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ── Countdown ─────────────────────────────────────────────────────── */}
-      
 
       {/* ── Features ──────────────────────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -157,7 +220,7 @@ export default function HomePage() {
             <FeatureCard
               icon="📝"
               color="green"
-              title="Devoirs & Examens"
+              title="Devoirs &amp; Examens"
               description="Collection complète de devoirs surveillés corrigés et d'examens nationaux pour une préparation optimale."
               items={['Devoirs par semestre', 'Examens nationaux SMA, SMB', 'Corrections méthodiques']}
             />
@@ -205,7 +268,7 @@ export default function HomePage() {
                 bg: 'bg-orange-50',
                 border: 'border-orange-100',
                 text: 'text-orange-700',
-                desc: 'Maths A&B, PC-SVT, Technologies, Économie',
+                desc: 'Maths A&amp;B, PC-SVT, Technologies, Économie',
                 icon: '🎓',
               },
             ].map((level) => (
@@ -291,6 +354,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── About section ─────────────────────────────────────────────────── */}
+      <AboutSection />
+
+      {/* ── FAQ section ───────────────────────────────────────────────────── */}
+      <FAQSection />
 
       {/* ── WhatsApp CTA ──────────────────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
