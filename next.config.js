@@ -11,7 +11,7 @@ const nextConfig = {
       {
         // Cache all public (non-auth) pages at Vercel's CDN edge for 1 hour,
         // serve stale while revalidating for up to 24 hours.
-        source: '/((?!profile|dashboard|admin|login|register|api).*)',
+        source: '/((?!profile|dashboard|admin|api).*)',
         headers: [
           {
             key: 'Cache-Control',

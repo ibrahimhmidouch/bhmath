@@ -4,8 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import { useAuth } from '@/app/context/AuthContext';
-
 const NAV_ITEMS = [
   {
     name: 'Tronc Commun',
@@ -47,7 +45,6 @@ export default function MainHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openMobileSection, setOpenMobileSection] = useState(null);
-  const { user, logout } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
   const searchInputRef = useRef(null);
@@ -224,35 +221,9 @@ export default function MainHeader() {
               )}
             </div>
 
-            {/* Desktop auth */}
-            <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-              <Link href="/contact" className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-orange-600 rounded-lg hover:bg-orange-50 transition-colors">
-                Contact
-              </Link>
-              {user ? (
-                <div className="flex items-center gap-2">
-                  <Link href="/profile" className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors">
-                    <img src={user.avatar} alt={user.fullName || user.username} className="h-7 w-7 rounded-full ring-2 ring-orange-100" />
-                    <span className="text-sm font-medium text-slate-700">{user.fullName || user.username}</span>
-                  </Link>
-                  <button
-                    onClick={logout}
-                    className="px-3 py-2 text-sm font-medium text-slate-500 hover:text-red-500 rounded-lg hover:bg-red-50 transition-colors"
-                  >
-                    Déconnexion
-                  </button>
-                </div>
-              ) : (
-                <div className="flex items-center gap-2">
-                  <Link href="/login" className="px-4 py-2 text-sm font-medium text-slate-700 hover:text-orange-600 rounded-lg hover:bg-orange-50 transition-colors">
-                    Connexion
-                  </Link>
-                  <Link href="/register" className="btn-primary text-sm px-4 py-2">
-                    S'inscrire
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link href="/contact" className="hidden md:flex px-3 py-2 text-sm font-medium text-slate-600 hover:text-orange-600 rounded-lg hover:bg-orange-50 transition-colors flex-shrink-0">
+              Contact
+            </Link>
 
             {/* Mobile: search icon + hamburger */}
             <div className="flex md:hidden items-center gap-1 ml-auto">
@@ -368,34 +339,10 @@ export default function MainHeader() {
           </Link>
         </div>
 
-        {/* Auth section */}
         <div className="p-4 border-t border-slate-100 bg-slate-50">
-          {user ? (
-            <div className="space-y-2">
-              <div className="flex items-center gap-3 px-3 py-2">
-                <img src={user.avatar} alt={user.fullName || user.username} className="h-9 w-9 rounded-full ring-2 ring-orange-100" />
-                <div>
-                  <p className="text-sm font-semibold text-slate-800">{user.fullName || user.username}</p>
-                  <p className="text-xs text-slate-400">Élève</p>
-                </div>
-              </div>
-              <Link href="/profile" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center px-4 py-2.5 text-sm font-medium text-slate-700 bg-white rounded-xl border border-slate-200 hover:border-orange-300 transition-colors">
-                Mon profil
-              </Link>
-              <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="w-full px-4 py-2.5 text-sm font-medium text-red-600 bg-red-50 rounded-xl hover:bg-red-100 transition-colors">
-                Déconnexion
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-2">
-              <Link href="/login" onClick={() => setIsMobileMenuOpen(false)} className="text-center px-4 py-2.5 text-sm font-medium text-slate-700 bg-white rounded-xl border border-slate-200 hover:border-orange-300 transition-colors">
-                Connexion
-              </Link>
-              <Link href="/register" onClick={() => setIsMobileMenuOpen(false)} className="text-center px-4 py-2.5 text-sm font-semibold text-white bg-orange-500 rounded-xl hover:bg-orange-600 transition-colors">
-                S'inscrire
-              </Link>
-            </div>
-          )}
+          <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center px-4 py-2.5 text-sm font-medium text-slate-700 bg-white rounded-xl border border-slate-200 hover:border-orange-300 transition-colors">
+            Contact
+          </Link>
         </div>
       </div>
     </>
