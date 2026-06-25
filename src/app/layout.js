@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import TopHeader from '@/components/TopHeader'
 import MainHeader from '@/components/MainHeader'
@@ -47,6 +48,12 @@ export default function RootLayout({ children }) {
           <MainHeader />
           {children}
           <Footer />
+          <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3523606019399197"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
       </body>
     </html>
   )
